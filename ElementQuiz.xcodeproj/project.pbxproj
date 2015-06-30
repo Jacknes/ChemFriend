@@ -14,6 +14,7 @@
 		58C5E4A41B42B0FB00D72A3B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58C5E4A31B42B0FB00D72A3B /* Images.xcassets */; };
 		58C5E4A71B42B0FB00D72A3B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58C5E4A51B42B0FB00D72A3B /* LaunchScreen.xib */; };
 		58C5E4B31B42B0FB00D72A3B /* ElementQuizTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C5E4B21B42B0FB00D72A3B /* ElementQuizTests.m */; };
+		58C5E4BD1B42B12F00D72A3B /* elements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58C5E4BC1B42B12F00D72A3B /* elements.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		58C5E4AC1B42B0FB00D72A3B /* ElementQuizTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ElementQuizTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		58C5E4B11B42B0FB00D72A3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58C5E4B21B42B0FB00D72A3B /* ElementQuizTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ElementQuizTests.m; sourceTree = "<group>"; };
+		58C5E4BC1B42B12F00D72A3B /* elements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = elements.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				58C5E49D1B42B0FB00D72A3B /* ViewController.h */,
 				58C5E49E1B42B0FB00D72A3B /* ViewController.m */,
 				58C5E4A01B42B0FB00D72A3B /* Main.storyboard */,
+				58C5E4BC1B42B12F00D72A3B /* elements.plist */,
 				58C5E4A31B42B0FB00D72A3B /* Images.xcassets */,
 				58C5E4A51B42B0FB00D72A3B /* LaunchScreen.xib */,
 				58C5E4961B42B0FB00D72A3B /* Supporting Files */,
@@ -200,6 +203,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				58C5E4A21B42B0FB00D72A3B /* Main.storyboard in Resources */,
+				58C5E4BD1B42B12F00D72A3B /* elements.plist in Resources */,
 				58C5E4A71B42B0FB00D72A3B /* LaunchScreen.xib in Resources */,
 				58C5E4A41B42B0FB00D72A3B /* Images.xcassets in Resources */,
 			);
