@@ -1,0 +1,16 @@
+//
+//  main.m
+//  ElementQuiz
+//
+//  Created by Jack Pascoe on 30/06/2015.
+//  Copyright (c) 2015 Jack Pascoe. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+#import "AppDelegate.h"
+
+int main(int argc, char * argv[]) {
+    @autoreleasepool {
+        return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
+    }
+}
