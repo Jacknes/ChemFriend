@@ -16,5 +16,31 @@
 	<string>Carbon</string>
 	<key>N</key>
 	<string>Nitrogen</string>
+	<key>O</key>
+	<string>Oxygen</string>
+	<key>F</key>
+	<string>Fluorine</string>
+	<key>Ne</key>
+	<string>Neon</string>
+	<key>Na</key>
+	<string>Sodium</string>
+	<key>Mg</key>
+	<string>Magnesium</string>
+	<key>Al</key>
+	<string>Aluminium</string>
+	<key>Si</key>
+	<string>Silicon</string>
+	<key>P</key>
+	<string>Phosphorus</string>
+	<key>S</key>
+	<string>Sulfur</string>
+	<key>Cl</key>
+	<string>Chlorine</string>
+	<key>Ar</key>
+	<string>Argon</string>
+	<key>K</key>
+	<string>Potassium</string>
+	<key>Ca</key>
+	<string>Calcium</string>
 </dict>
 </plist>
