@@ -24,16 +24,22 @@
 @property (weak, nonatomic) IBOutlet UIButton *option4;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel *elementMain;
+@property (weak, nonatomic) IBOutlet UIButton *restartButton;
 @end
 
 @implementation ViewController
 int score = 0;
+int attempts = 0;
+
 
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    self.restartButton.hidden = YES;
+    
 
     // Gathers the file path for the plist and generates a dictionary
     NSString * path = [[NSBundle mainBundle] pathForResource:@"elements" ofType:@"plist" inDirectory:nil];
@@ -65,9 +71,11 @@ int score = 0;
     if ([selection isEqualToString:self.answer])
     {
         score++;
+        attempts++;
+        
        // NSString *strFromInt = [NSString stringWithFormat:@"%d",score];
        // self.scoreLabel.text = (@"Score: %@", strFromInt);
-        [self.scoreLabel setText:[NSString stringWithFormat:@"Score: %i",score]];
+        [self.scoreLabel setText:[NSString stringWithFormat:@"Score: %i/%i",score, attempts]];
     
         
     // Make it pop up message here.
@@ -94,10 +102,32 @@ int score = 0;
                                               cancelButtonTitle:@"Okay"
                                               otherButtonTitles:nil];
         [alert show];
+        attempts++;
+        [self.scoreLabel setText:[NSString stringWithFormat:@"Score: %i/%i",score, attempts]];
     }
     
-    // Generates new questions
-    [self generateQuestions:(nil)];
+    
+    
+    if (attempts < 20){
+        [self generateQuestions:(nil)];  // Generates new questions
+        
+    }
+    
+    else if (attempts >= 20){
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Quiz Complete"
+                                                        message:@"Congratulations"
+                                                       delegate:self
+                                              cancelButtonTitle:@"Thanks"
+                                              otherButtonTitles:nil];
+        [alert show];
+        self.option1.hidden = YES;
+        self.option2.hidden = YES;
+        self.option3.hidden = YES;
+        self.option4.hidden = YES;
+        self.restartButton.hidden = NO;
+        
+        
+    }
     
     
 }
@@ -171,6 +201,26 @@ int score = 0;
     
     
 }
+
+
+- (IBAction)restartGame:(id)sender {
+    
+    score = 0;
+    attempts = 0;
+    [self.scoreLabel setText:[NSString stringWithFormat:@"Score: %i/%i",score, attempts]];
+    self.option1.hidden = NO;
+    self.option2.hidden = NO;
+    self.option3.hidden = NO;
+    self.option4.hidden = NO;
+    self.restartButton.hidden = YES;
+    [self generateQuestions:(nil)];
+    
+    
+    
+    
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
