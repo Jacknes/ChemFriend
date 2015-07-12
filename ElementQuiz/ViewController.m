@@ -121,17 +121,27 @@ int score = 0;
     
     [self.elementMain setText:[NSString stringWithFormat:@"%@",self.combos[self.answer]]];
     
+    answersArr[0] = self.answer;
     
     
-    for (int x = 0; x < 3; x++)// Generates a random array of symbols
+    for (int x = 1; x < 4; x++)// Generates a random array of symbols
     {
-        int rand = arc4random_uniform(19);
-        answersArr[x] = self.symbols[rand];
         
+        BOOL isTheObjectThere = true;
+        
+        while (isTheObjectThere == true){
+            int rand = arc4random_uniform(19);
+            isTheObjectThere = [answersArr containsObject: self.symbols[rand]];
+            if (isTheObjectThere == false){
+                answersArr[x] = self.symbols[rand];
+            }
+        }
+       
+       
         
     }
     
-    answersArr[3] = self.answer;
+    
     
     for (int x= 0; x < 4; x++)
     {
