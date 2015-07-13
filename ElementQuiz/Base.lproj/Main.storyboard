@@ -18,9 +18,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B4Y-MP-POz">
-                                <rect key="frame" x="37" y="135" width="122" height="102"/>
+                                <rect key="frame" x="37" y="135" width="120" height="120"/>
+                                <color key="backgroundColor" red="0.48470305159999999" green="0.73080180019999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -28,37 +30,32 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yu6-pi-52p">
-                                <rect key="frame" x="226" y="151" width="120" height="60"/>
+                                <rect key="frame" x="226" y="135" width="120" height="120"/>
+                                <color key="backgroundColor" red="0.48470305159999999" green="0.73080180019999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mBt-ip-XHR"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dpi-Ml-0HB">
-                                <rect key="frame" x="46" y="235" width="104" height="81"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="buttonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ye0-tF-fIG"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hcq-dK-Glt">
-                                <rect key="frame" x="232" y="254" width="108" height="43"/>
+                                <rect key="frame" x="226" y="273" width="120" height="120"/>
+                                <color key="backgroundColor" red="0.48470305159999999" green="0.73080180019999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Baf-yw-dSp"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Score: 0/0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eOc-Vv-DF5">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Score: 0/0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eOc-Vv-DF5">
                                 <rect key="frame" x="208" y="378" width="227" height="87"/>
+                                <color key="backgroundColor" red="0.48470305159999999" green="0.73080180019999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -75,18 +72,29 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ft-ax-sKJ">
                                 <rect key="frame" x="195" y="28" width="210" height="98"/>
+                                <color key="backgroundColor" red="0.48470305159999999" green="0.73080180019999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dpi-Ml-0HB">
+                                <rect key="frame" x="37" y="273" width="120" height="120"/>
+                                <color key="backgroundColor" red="0.48470305159999999" green="0.73080180019999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ye0-tF-fIG"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="y5e-mz-LGs" secondAttribute="centerY" constant="57" id="4mI-EJ-T7a"/>
-                            <constraint firstItem="Hcq-dK-Glt" firstAttribute="leading" secondItem="Dpi-Ml-0HB" secondAttribute="trailing" constant="87" id="4oz-jR-ufr"/>
                             <constraint firstAttribute="centerY" secondItem="eOc-Vv-DF5" secondAttribute="centerY" constant="-92.5" id="GEg-5b-uLk"/>
                             <constraint firstItem="Dpi-Ml-0HB" firstAttribute="centerX" secondItem="B4Y-MP-POz" secondAttribute="centerX" id="JLj-dm-Zbc"/>
-                            <constraint firstItem="Dpi-Ml-0HB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="Wbv-6k-afr"/>
                             <constraint firstItem="Hcq-dK-Glt" firstAttribute="centerX" secondItem="yu6-pi-52p" secondAttribute="centerX" id="XkT-b9-MJH"/>
                             <constraint firstItem="yu6-pi-52p" firstAttribute="leading" secondItem="B4Y-MP-POz" secondAttribute="trailing" constant="63" id="YQT-ip-Dzo"/>
                             <constraint firstAttribute="centerX" secondItem="eOc-Vv-DF5" secondAttribute="centerX" id="Z2x-0l-6U9"/>
@@ -109,6 +117,76 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Volume-->
+        <scene sceneID="jYF-Ji-BUS">
+            <objects>
+                <viewController id="j2C-y9-4LK" customClass="volume" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OX9-Cf-cjx"/>
+                        <viewControllerLayoutGuide type="bottom" id="f6J-Dv-KfD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7Hc-Nt-5mf">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x4h-Kc-Jnv">
+                                <rect key="frame" x="177" y="182" width="65" height="30"/>
+                                <state key="normal" title="Calculate">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="calcPressed:" destination="j2C-y9-4LK" eventType="touchUpInside" id="Y92-yt-VfZ"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="nT2-N6-GGG">
+                                <rect key="frame" x="253" y="69" width="119" height="29"/>
+                                <segments>
+                                    <segment title="Volume"/>
+                                    <segment title="Moles"/>
+                                </segments>
+                            </segmentedControl>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Value" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NiU-PZ-W0E">
+                                <rect key="frame" x="73" y="69" width="159" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Result" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fW1-Cl-Huq">
+                                <rect key="frame" x="73" y="249" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="w84-Ah-S1Z">
+                                <rect key="frame" x="169" y="139" width="81" height="29"/>
+                                <segments>
+                                    <segment title="RTP"/>
+                                    <segment title="STP"/>
+                                </segments>
+                                <connections>
+                                    <action selector="conditionChanged:" destination="j2C-y9-4LK" eventType="valueChanged" id="afL-Lc-BH8"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Moles/Volume" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VZq-Ui-QaY">
+                                <rect key="frame" x="217" y="253" width="109" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="calcButton" destination="x4h-Kc-Jnv" id="gI0-7f-W5j"/>
+                        <outlet property="conditionSelect" destination="w84-Ah-S1Z" id="WN6-Gy-08N"/>
+                        <outlet property="resultLabel" destination="VZq-Ui-QaY" id="Hwm-Au-wfA"/>
+                        <outlet property="resultText" destination="fW1-Cl-Huq" id="qeU-UY-e8Y"/>
+                        <outlet property="unitSelect" destination="nT2-N6-GGG" id="1Gs-O5-4jB"/>
+                        <outlet property="valueText" destination="NiU-PZ-W0E" id="4Gv-Sl-EOl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iDY-7o-uRq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="220" y="983"/>
         </scene>
         <!--Molar Heat-->
         <scene sceneID="dAz-NG-div">
