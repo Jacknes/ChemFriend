@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		581DB1B71B5250C4001C8F7F /* molarHeat.m in Sources */ = {isa = PBXBuildFile; fileRef = 581DB1B61B5250C4001C8F7F /* molarHeat.m */; };
 		58C5E4991B42B0FB00D72A3B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C5E4981B42B0FB00D72A3B /* main.m */; };
 		58C5E49C1B42B0FB00D72A3B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C5E49B1B42B0FB00D72A3B /* AppDelegate.m */; };
 		58C5E49F1B42B0FB00D72A3B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C5E49E1B42B0FB00D72A3B /* ViewController.m */; };
@@ -15,6 +16,7 @@
 		58C5E4A71B42B0FB00D72A3B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58C5E4A51B42B0FB00D72A3B /* LaunchScreen.xib */; };
 		58C5E4B31B42B0FB00D72A3B /* ElementQuizTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C5E4B21B42B0FB00D72A3B /* ElementQuizTests.m */; };
 		58C5E4BD1B42B12F00D72A3B /* elements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58C5E4BC1B42B12F00D72A3B /* elements.plist */; };
+		58D1175A1B528B80005ED589 /* moles.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D117591B528B80005ED589 /* moles.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		581DB1B61B5250C4001C8F7F /* molarHeat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = molarHeat.m; sourceTree = "<group>"; };
+		581DB1B81B525110001C8F7F /* molarHeat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = molarHeat.h; sourceTree = "<group>"; };
 		58C5E4931B42B0FB00D72A3B /* ElementQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ElementQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58C5E4971B42B0FB00D72A3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58C5E4981B42B0FB00D72A3B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -42,6 +46,8 @@
 		58C5E4B11B42B0FB00D72A3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58C5E4B21B42B0FB00D72A3B /* ElementQuizTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ElementQuizTests.m; sourceTree = "<group>"; };
 		58C5E4BC1B42B12F00D72A3B /* elements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = elements.plist; sourceTree = "<group>"; };
+		58D117581B528B73005ED589 /* moles.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = moles.h; sourceTree = "<group>"; };
+		58D117591B528B80005ED589 /* moles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = moles.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +92,10 @@
 				58C5E49A1B42B0FB00D72A3B /* AppDelegate.h */,
 				58C5E49B1B42B0FB00D72A3B /* AppDelegate.m */,
 				58C5E49D1B42B0FB00D72A3B /* ViewController.h */,
+				581DB1B81B525110001C8F7F /* molarHeat.h */,
+				581DB1B61B5250C4001C8F7F /* molarHeat.m */,
+				58D117581B528B73005ED589 /* moles.h */,
+				58D117591B528B80005ED589 /* moles.m */,
 				58C5E49E1B42B0FB00D72A3B /* ViewController.m */,
 				58C5E4A01B42B0FB00D72A3B /* Main.storyboard */,
 				58C5E4BC1B42B12F00D72A3B /* elements.plist */,
@@ -223,9 +233,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58D1175A1B528B80005ED589 /* moles.m in Sources */,
 				58C5E49F1B42B0FB00D72A3B /* ViewController.m in Sources */,
 				58C5E49C1B42B0FB00D72A3B /* AppDelegate.m in Sources */,
 				58C5E4991B42B0FB00D72A3B /* main.m in Sources */,
+				581DB1B71B5250C4001C8F7F /* molarHeat.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,6 +434,7 @@
 				58C5E4B81B42B0FB00D72A3B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		58C5E4B91B42B0FB00D72A3B /* Build configuration list for PBXNativeTarget "ElementQuizTests" */ = {
 			isa = XCConfigurationList;
@@ -430,6 +443,7 @@
 				58C5E4BB1B42B0FB00D72A3B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
