@@ -17,7 +17,7 @@
 @property(strong, nonatomic) NSDictionary * combos;
 
 
-//@property(strong, nonatomic) NSNumber * rand;
+
 @property (weak, nonatomic) IBOutlet UIButton *option1;
 @property (weak, nonatomic) IBOutlet UIButton *option2;
 @property (weak, nonatomic) IBOutlet UIButton *option3;
@@ -25,11 +25,15 @@
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel *elementMain;
 @property (weak, nonatomic) IBOutlet UIButton *restartButton;
+@property (weak, nonatomic) IBOutlet UIProgressView *progressBar;
+
 @end
 
 @implementation ViewController
 int score = 0;
 int attempts = 0;
+float progress = 0.0;
+
 
 
 
@@ -38,7 +42,7 @@ int attempts = 0;
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    self.restartButton.hidden = YES;
+    self.restartButton.hidden = YES; // Sets the restartButton to invisible when the view is loaded
     
 
     // Gathers the file path for the plist and generates a dictionary
@@ -47,35 +51,35 @@ int attempts = 0;
     
     
    
-    self.symbols = @[@"H", @"He", @"Li", @"Be", @"B", @"C", @"N", @"O", @"F", @"Ne", @"Na", @"Mg", @"Al", @"Si", @"P", @"S", @"Cl", @"Ar", @"K", @"Ca"];
+    self.symbols = @[@"H", @"He", @"Li", @"Be", @"B", @"C", @"N", @"O", @"F", @"Ne", @"Na", @"Mg", @"Al", @"Si", @"P", @"S", @"Cl", @"Ar", @"K", @"Ca"]; // Sets the basic symbols to be used
     
-    [self generateQuestions:(nil)];
-    
-    
-    
-  /*  //self.option1.titleLabel.text = self.symbols[0];
-    [self.option1 setTitle:self.symbols[0] forState:UIControlStateNormal];
-    [self.option2 setTitle:self.symbols[1] forState:UIControlStateNormal];
-    [self.option3 setTitle:self.symbols[2] forState:UIControlStateNormal];
-   */
-    
-    
+    [self generateQuestions:(nil)]; // Calls the first generateQuestions to occur
     
     
 }
+
+
 - (IBAction)buttonPress:(id)sender
 {
-    NSString *selection = [(UIButton *)sender currentTitle];
+    NSString *selection = [(UIButton *)sender currentTitle]; // Collects the Element that has been clicked as this function handles all answer button taps
+    UIButton *button = (UIButton *)sender;
     
     
-    if ([selection isEqualToString:self.answer])
+    if ([selection isEqualToString:self.answer]) // Compares the selection to the answer
     {
-        score++;
-        attempts++;
         
-       // NSString *strFromInt = [NSString stringWithFormat:@"%d",score];
-       // self.scoreLabel.text = (@"Score: %@", strFromInt);
-        [self.scoreLabel setText:[NSString stringWithFormat:@"Score: %i/%i",score, attempts]];
+        score++; // Iterates the score and total number of rounds
+        attempts++;
+        button.backgroundColor = [UIColor greenColor];
+        
+        double delayInSeconds = 1.0;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            button.backgroundColor = [UIColor blueColor];
+        });
+     
+       
+        
     
         
     // Make it pop up message here.
@@ -84,36 +88,61 @@ int attempts = 0;
        */
         
         
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Correct!"
+   /* UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Correct!"
     message:@"You answered correctly"
     delegate:self
     cancelButtonTitle:@"Okay"
                                           otherButtonTitles:nil];
     
-    [alert show];
+    [alert show]; */
+        
     }
     
-    // Else statement detecting if the strings are not equal
-    else if(![selection isEqualToString:self.answer])
+  
+    else if(![selection isEqualToString:self.answer]) // Else statement detecting if the strings are not equal
     {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Wrong!"
+       /* UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Wrong!"
                                                         message:@"You answered incorrectly :c"
                                                        delegate:self
                                               cancelButtonTitle:@"Okay"
                                               otherButtonTitles:nil];
-        [alert show];
-        attempts++;
-        [self.scoreLabel setText:[NSString stringWithFormat:@"Score: %i/%i",score, attempts]];
+        [alert show]; */
+        
+        attempts++; // Iterates the attempts
+       
     }
     
+    [self.scoreLabel setText:[NSString stringWithFormat:@"Score: %i/%i",score, attempts]]; // Updates the score label accordingly
+    [self increaseProgressValue:(nil)]; // Updates the progress bar accordingly
+    [self checkGameStatus:(nil)]; // Checks the status of the game
     
+ 
+
+    
+    
+}
+
+- (void)increaseProgressValue:(id)sender {
+    
+  
+        
+        progress = progress+0.05;
+        
+        self.progressBar.progress = (float) progress;
+ 
+    
+    
+}
+
+
+- (void)checkGameStatus:(id)sender {
     
     if (attempts < 20){
         [self generateQuestions:(nil)];  // Generates new questions
         
     }
     
-    else if (attempts >= 20){
+    else if (attempts >= 20){ // Ends the game
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Quiz Complete"
                                                         message:@"Congratulations"
                                                        delegate:self
@@ -124,44 +153,40 @@ int attempts = 0;
         self.option2.hidden = YES;
         self.option3.hidden = YES;
         self.option4.hidden = YES;
-        self.restartButton.hidden = NO;
+        self.restartButton.hidden = NO; // Hides all game buttons allowing for a restart
         
         
     }
-    
     
 }
 
 
 
-
 - (void)generateQuestions:(id)sender
 {
-    NSMutableArray *answersArr = [[NSMutableArray alloc] init];
-    // Selects a random element
-    int randomQuestion = arc4random_uniform(19);
-    // Selects a random button
-    //int randomButton = arc4random_uniform(3);
-    //Sets the correct answer
-    self.answer = self.symbols[randomQuestion];
-    //[self.buttons(randomButton) setTitle:self.symbols[randomQuestion] forState:UIControlStateNormal];
+    NSMutableArray *answersArr = [[NSMutableArray alloc] init]; // Creates and Array that will hold the answers
+    
+    int randomQuestion = arc4random_uniform(19); // Selects a random element
+    
+    self.answer = self.symbols[randomQuestion]; //Sets the correct answer
+    
 
     
-    // Set the question label here.
+
     
-    [self.elementMain setText:[NSString stringWithFormat:@"%@",self.combos[self.answer]]];
+    [self.elementMain setText:[NSString stringWithFormat:@"%@",self.combos[self.answer]]];     // Set the question label here.
     
-    answersArr[0] = self.answer;
+    answersArr[0] = self.answer; // Sets the first element of the array as the right answer
     
     
     for (int x = 1; x < 4; x++)// Generates a random array of symbols
     {
         
-        BOOL isTheObjectThere = true;
+        BOOL isTheObjectThere = true; // Works similiar to a bubble sort
         
-        while (isTheObjectThere == true){
-            int rand = arc4random_uniform(19);
-            isTheObjectThere = [answersArr containsObject: self.symbols[rand]];
+        while (isTheObjectThere == true){ // Until the random object is not in the array already this will loop
+            int rand = arc4random_uniform(19); // Generates a random number between 0-19
+            isTheObjectThere = [answersArr containsObject: self.symbols[rand]]; // Checks if 
             if (isTheObjectThere == false){
                 answersArr[x] = self.symbols[rand];
             }
@@ -201,6 +226,8 @@ int attempts = 0;
     
     
 }
+
+
 
 
 - (IBAction)restartGame:(id)sender {
