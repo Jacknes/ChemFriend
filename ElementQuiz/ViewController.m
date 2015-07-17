@@ -158,7 +158,7 @@ float progress = 0.0;
     
     self.answer = self.symbols[randomQuestion]; //Sets the correct answer
     
-    [self.elementMain setText:[NSString stringWithFormat:@"%@",self.combos[self.answer]]];     // Set the question label here.
+    [self.elementMain setText:[NSString stringWithFormat:@"What is the Symbol for %@?",self.combos[self.answer]]];     // Set the question label here.
     
     answersArr[0] = self.answer; // Sets the first element of the array as the right answer
     
