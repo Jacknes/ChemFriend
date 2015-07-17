@@ -25,7 +25,8 @@
 
 @implementation volume
 
-int condition = 0;
+float condition = 24.79; // Because the segment display is automatically on RTP
+float result = 0.0;
 
 
 - (void)viewDidLoad
@@ -34,25 +35,45 @@ int condition = 0;
     // Do any additional setup after loading the view, typically from a nib.
 }
 
+// STP - 22.71L/mol
+
+// RTP - 24.79L/mol
+
 
 - (IBAction)calcPressed:(id)sender
 {
+    float value;
     
-    // STP - 22.71L/mol
+    if ([self.unitSelect selectedSegmentIndex] == 0) {
+        
+        value = [self.valueText.text floatValue];
+        
+        result = (value/condition);
+        
+        self.resultText.text = [NSString stringWithFormat:@"%f", result];
+        self.resultLabel.text = @"Moles";
+        
+        
+    }
     
-    // RTP - 24.79L/mol
+    else if ([self.unitSelect selectedSegmentIndex] == 1){
+        
+        float value;
+            
+            value = [self.valueText.text floatValue];
+            result = (value * condition);
+            
+            self.resultText.text = [NSString stringWithFormat:@"%f", result];
+            self.resultLabel.text = @"Volume";
+        
+    }
+    
+   
     
     
+
     
-    
-   /* float mass = [self.massText.text floatValue];
-    float molar = [self.molarText.text floatValue];
-    float result = (mass/molar);
-    
-    self.resultText.text = [NSString stringWithFormat:@"%f", result];*/
-    
-    
-    
+
     
     
 
@@ -62,9 +83,14 @@ int condition = 0;
 
 - (IBAction)conditionChanged:(id)sender
 {
-    [self.conditionSelect addTarget:self
-                         action:@selector(action:)
-               forControlEvents:UIControlEventValueChanged];
+    if ([self.conditionSelect selectedSegmentIndex] == 1) {
+        condition = 22.71; // Sets the condition as STP
+        
+    }
+    
+    else if ([self.conditionSelect selectedSegmentIndex] == 0) {
+        condition = 24.79; // Sets the condition as RTP
+    }
     
 }
 

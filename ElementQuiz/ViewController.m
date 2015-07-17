@@ -17,7 +17,6 @@
 @property(strong, nonatomic) NSDictionary * combos;
 
 
-
 @property (weak, nonatomic) IBOutlet UIButton *option1;
 @property (weak, nonatomic) IBOutlet UIButton *option2;
 @property (weak, nonatomic) IBOutlet UIButton *option3;
@@ -26,6 +25,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *elementMain;
 @property (weak, nonatomic) IBOutlet UIButton *restartButton;
 @property (weak, nonatomic) IBOutlet UIProgressView *progressBar;
+@property (weak, nonatomic) IBOutlet UIView *quizView;
 
 @end
 
@@ -33,8 +33,6 @@
 int score = 0;
 int attempts = 0;
 float progress = 0.0;
-
-
 
 
 
@@ -54,8 +52,6 @@ float progress = 0.0;
     self.symbols = @[@"H", @"He", @"Li", @"Be", @"B", @"C", @"N", @"O", @"F", @"Ne", @"Na", @"Mg", @"Al", @"Si", @"P", @"S", @"Cl", @"Ar", @"K", @"Ca"]; // Sets the basic symbols to be used
     
     [self generateQuestions:(nil)]; // Calls the first generateQuestions to occur
-    
-    
 }
 
 
@@ -67,54 +63,44 @@ float progress = 0.0;
     
     if ([selection isEqualToString:self.answer]) // Compares the selection to the answer
     {
-        
         score++; // Iterates the score and total number of rounds
         attempts++;
         button.backgroundColor = [UIColor greenColor];
-        
-        double delayInSeconds = 1.0;
-        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-            button.backgroundColor = [UIColor blueColor];
-        });
-     
-       
-        
-    
-        
-    // Make it pop up message here.
-    /*  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Correct!" message:@"You answered correctly and gained + 1 score!" delegate:self cancelButtonTitle:@"Okay"];
-        [alert show];
-       */
-        
-        
-   /* UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Correct!"
-    message:@"You answered correctly"
-    delegate:self
-    cancelButtonTitle:@"Okay"
-                                          otherButtonTitles:nil];
-    
-    [alert show]; */
-        
     }
     
   
     else if(![selection isEqualToString:self.answer]) // Else statement detecting if the strings are not equal
     {
-       /* UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Wrong!"
-                                                        message:@"You answered incorrectly :c"
-                                                       delegate:self
-                                              cancelButtonTitle:@"Okay"
-                                              otherButtonTitles:nil];
-        [alert show]; */
+        
+        
+        button.backgroundColor = [UIColor redColor];
+        
+        
+        if (self.answer == self.option1.titleLabel.text)
+           self.option1.backgroundColor = [UIColor greenColor];
+        else if (self.answer == self.option2.titleLabel.text)
+            self.option2.backgroundColor = [UIColor greenColor];
+        else if (self.answer == self.option3.titleLabel.text)
+            self.option3.backgroundColor = [UIColor greenColor];
+        else if (self.answer == self.option4.titleLabel.text)
+            self.option4.backgroundColor = [UIColor greenColor];
+        
+      
+
         
         attempts++; // Iterates the attempts
        
     }
     
-    [self.scoreLabel setText:[NSString stringWithFormat:@"Score: %i/%i",score, attempts]]; // Updates the score label accordingly
-    [self increaseProgressValue:(nil)]; // Updates the progress bar accordingly
-    [self checkGameStatus:(nil)]; // Checks the status of the game
+    double delayInSeconds = 1.5;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        [self resetButtonStates:(nil)];
+        [self.scoreLabel setText:[NSString stringWithFormat:@"Score: %i/%i",score, attempts]]; // Updates the score label accordingly
+        [self increaseProgressValue:(nil)]; // Updates the progress bar accordingly
+        [self checkGameStatus:(nil)]; // Checks the status of the game
+    });
+  
     
  
 
@@ -122,16 +108,18 @@ float progress = 0.0;
     
 }
 
+
+- (void)resetButtonStates:(id)sender { // Method that resets the values of the buttons after colour change
+    self.option1.backgroundColor = [UIColor colorWithRed:124.0f/255.0f green:186.0f/255.0f blue:255.0f/255.0f alpha:1.0];
+    self.option2.backgroundColor = [UIColor colorWithRed:124.0f/255.0f green:186.0f/255.0f blue:255.0f/255.0f alpha:1.0];
+    self.option3.backgroundColor = [UIColor colorWithRed:124.0f/255.0f green:186.0f/255.0f blue:255.0f/255.0f alpha:1.0];
+    self.option4.backgroundColor = [UIColor colorWithRed:124.0f/255.0f green:186.0f/255.0f blue:255.0f/255.0f alpha:1.0];
+}
+
 - (void)increaseProgressValue:(id)sender {
-    
-  
-        
-        progress = progress+0.05;
-        
-        self.progressBar.progress = (float) progress;
- 
-    
-    
+
+        progress = progress+0.05; // Sets the value for the progress bar
+        self.progressBar.progress = (float) progress; // Updates the value of the progressbar
 }
 
 
@@ -146,10 +134,10 @@ float progress = 0.0;
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Quiz Complete"
                                                         message:@"Congratulations"
                                                        delegate:self
-                                              cancelButtonTitle:@"Thanks"
+                                              cancelButtonTitle:@"Thanks" // Alert at the end of the game
                                               otherButtonTitles:nil];
         [alert show];
-        self.option1.hidden = YES;
+        self.option1.hidden = YES; // Hides the answer buttons
         self.option2.hidden = YES;
         self.option3.hidden = YES;
         self.option4.hidden = YES;
@@ -170,10 +158,6 @@ float progress = 0.0;
     
     self.answer = self.symbols[randomQuestion]; //Sets the correct answer
     
-
-    
-
-    
     [self.elementMain setText:[NSString stringWithFormat:@"%@",self.combos[self.answer]]];     // Set the question label here.
     
     answersArr[0] = self.answer; // Sets the first element of the array as the right answer
@@ -191,11 +175,7 @@ float progress = 0.0;
                 answersArr[x] = self.symbols[rand];
             }
         }
-       
-       
-        
     }
-    
     
     
     for (int x= 0; x < 4; x++)
@@ -206,8 +186,6 @@ float progress = 0.0;
         [answersArr replaceObjectAtIndex:x withObject:answersArr[rand]];
       
         [answersArr replaceObjectAtIndex:rand withObject:temp];
-        
-        
         
     }
     
@@ -223,10 +201,7 @@ float progress = 0.0;
         
        
     }
-    
-    
 }
-
 
 
 
