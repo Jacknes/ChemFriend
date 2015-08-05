@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		581DB1B71B5250C4001C8F7F /* molarHeat.m in Sources */ = {isa = PBXBuildFile; fileRef = 581DB1B61B5250C4001C8F7F /* molarHeat.m */; };
 		588122571B537E620022D94A /* volume.m in Sources */ = {isa = PBXBuildFile; fileRef = 588122561B537E620022D94A /* volume.m */; };
+		589604351B71E876008871A1 /* galvanicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 589604341B71E876008871A1 /* galvanicCell.m */; };
 		58C5E4991B42B0FB00D72A3B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C5E4981B42B0FB00D72A3B /* main.m */; };
 		58C5E49C1B42B0FB00D72A3B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C5E49B1B42B0FB00D72A3B /* AppDelegate.m */; };
 		58C5E49F1B42B0FB00D72A3B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C5E49E1B42B0FB00D72A3B /* ViewController.m */; };
@@ -35,6 +36,8 @@
 		581DB1B81B525110001C8F7F /* molarHeat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = molarHeat.h; sourceTree = "<group>"; };
 		588122561B537E620022D94A /* volume.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = volume.m; sourceTree = "<group>"; };
 		588122581B537E6E0022D94A /* volume.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = volume.h; sourceTree = "<group>"; };
+		589604331B71E85A008871A1 /* galvanicCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = galvanicCell.h; sourceTree = "<group>"; };
+		589604341B71E876008871A1 /* galvanicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = galvanicCell.m; sourceTree = "<group>"; };
 		58C5E4931B42B0FB00D72A3B /* ElementQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ElementQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58C5E4971B42B0FB00D72A3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58C5E4981B42B0FB00D72A3B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -95,11 +98,13 @@
 				58C5E49A1B42B0FB00D72A3B /* AppDelegate.h */,
 				58C5E49B1B42B0FB00D72A3B /* AppDelegate.m */,
 				58C5E49D1B42B0FB00D72A3B /* ViewController.h */,
+				58C5E49E1B42B0FB00D72A3B /* ViewController.m */,
 				581DB1B81B525110001C8F7F /* molarHeat.h */,
 				581DB1B61B5250C4001C8F7F /* molarHeat.m */,
 				58D117581B528B73005ED589 /* moles.h */,
 				58D117591B528B80005ED589 /* moles.m */,
-				58C5E49E1B42B0FB00D72A3B /* ViewController.m */,
+				589604331B71E85A008871A1 /* galvanicCell.h */,
+				589604341B71E876008871A1 /* galvanicCell.m */,
 				58C5E4A01B42B0FB00D72A3B /* Main.storyboard */,
 				588122561B537E620022D94A /* volume.m */,
 				588122581B537E6E0022D94A /* volume.h */,
@@ -238,6 +243,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				589604351B71E876008871A1 /* galvanicCell.m in Sources */,
 				58D1175A1B528B80005ED589 /* moles.m in Sources */,
 				58C5E49F1B42B0FB00D72A3B /* ViewController.m in Sources */,
 				58C5E49C1B42B0FB00D72A3B /* AppDelegate.m in Sources */,

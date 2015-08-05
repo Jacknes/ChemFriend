@@ -134,27 +134,69 @@
             </objects>
             <point key="canvasLocation" x="271.5" y="101"/>
         </scene>
-        <!--View Controller-->
+        <!--Galvanic Cell-->
         <scene sceneID="0SS-IQ-6X2">
             <objects>
-                <viewController id="btb-WL-wnc" sceneMemberID="viewController">
+                <viewController id="btb-WL-wnc" customClass="galvanicCell" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CuC-cP-hix"/>
                         <viewControllerLayoutGuide type="bottom" id="UgT-yY-A4J"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ckX-JK-zdW">
+                    <view key="view" contentMode="scaleToFill" id="ckX-JK-zdW" customClass="UIControl">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Metal 1" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yhV-gO-0SQ">
+                                <rect key="frame" x="112" y="213" width="171" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Metal 2" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2lk-zh-du4">
+                                <rect key="frame" x="112" y="273" width="171" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Cathode:                                            Anode:" translatesAutoresizingMaskIntoConstraints="NO" id="za7-ds-KGO">
+                                <rect key="frame" x="77" y="372" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j6b-wS-4hk">
+                                <rect key="frame" x="165" y="319" width="65" height="30"/>
+                                <state key="normal" title="Calculate">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="calculatePress:" destination="btb-WL-wnc" eventType="touchUpInside" id="FA4-xG-HjX"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wqk-qf-wBj">
+                                <rect key="frame" x="95" y="416" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Battery" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fwv-Ot-AhW">
-                                <rect key="frame" x="146" y="161" width="56" height="21"/>
+                                <rect key="frame" x="146" y="120" width="56" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="wqk-qf-wBj"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="informationText" destination="za7-ds-KGO" id="zcv-Nw-IaQ"/>
+                        <outlet property="metal1Text" destination="yhV-gO-0SQ" id="ilg-3m-Qyw"/>
+                        <outlet property="metal2Text" destination="2lk-zh-du4" id="hso-Sk-Of3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g5D-4R-2Ea" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
