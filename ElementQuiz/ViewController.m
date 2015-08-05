@@ -168,10 +168,10 @@ float progress = 0.0;
         
         BOOL isTheObjectThere = true; // Works similiar to a bubble sort
         
-        while (isTheObjectThere == true){ // Until the random object is not in the array already this will loop
+        while (isTheObjectThere){ // Until the random object is not in the array already this will loop
             int rand = arc4random_uniform(19); // Generates a random number between 0-19
             isTheObjectThere = [answersArr containsObject: self.symbols[rand]]; // Checks if 
-            if (isTheObjectThere == false){
+            if (!isTheObjectThere){
                 answersArr[x] = self.symbols[rand];
             }
         }

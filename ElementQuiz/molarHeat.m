@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "molarHeat.h"
 
+
 @interface molarHeat ()
 @property (weak, nonatomic) IBOutlet UITextField *massText;
 @property (weak, nonatomic) IBOutlet UITextField *specificText;
@@ -16,6 +17,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *calculateButton;
 @property (weak, nonatomic) IBOutlet UITextField *deltaHText;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *negativeSwitch;
+
+
 
 
 @end
@@ -26,14 +29,26 @@
 int negative = -1;
 
 
+
 - (void)viewDidLoad
 {
     
+    
   //  [self.massText setDelegate:self.massText];
     [super viewDidLoad];
+    
+    
     // Do any additional setup after loading the view, typically from a nib.
 }
 
+
+- (IBAction)resignKeyboards:(id)sender {
+    [self.tempChangeText resignFirstResponder];
+    [self.specificText resignFirstResponder];
+    [self.massText resignFirstResponder];
+
+        
+}
 
 
 
@@ -44,9 +59,36 @@ int negative = -1;
     float specific = [self.specificText.text floatValue];
     float temp = [self.tempChangeText.text floatValue];
     
-    float result = -(mass * specific * temp * negative);
+    float deltaH = [self.deltaHText.text floatValue];
     
-    self.deltaHText.text = [NSString stringWithFormat:@"%f", result];
+    
+    if (deltaH == 0) {
+        float result = -(mass * specific * temp * negative);
+        self.deltaHText.text = [NSString stringWithFormat:@"%f", result];
+    }
+    
+    else if (mass == 0) {
+        float mass = -(deltaH / (specific * temp * negative));
+        self.massText.text = [NSString stringWithFormat:@"%f", mass];
+    }
+    
+    else if (specific == 0) {
+        float specific = -(deltaH / (mass * temp * negative));
+        self.specificText.text = [NSString stringWithFormat:@"%f", specific];
+        
+    }
+    
+    else if (temp == 0) {
+        float temp = -(deltaH / (mass * specific * negative));
+        self.tempChangeText.text = [NSString stringWithFormat:@"%f", temp];
+    }
+    
+    
+    
+    
+    
+    
+    [self.tempChangeText resignFirstResponder];
     
     
     
