@@ -328,29 +328,29 @@
                         <viewControllerLayoutGuide type="top" id="gZT-00-B4A"/>
                         <viewControllerLayoutGuide type="bottom" id="AVi-Of-ous"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="7Hc-Nt-5mf">
+                    <view key="view" contentMode="scaleToFill" id="7Hc-Nt-5mf" customClass="UIControl">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="nT2-N6-GGG">
-                                <rect key="frame" x="189" y="87" width="119" height="29"/>
+                                <rect key="frame" x="225" y="174" width="119" height="29"/>
                                 <segments>
                                     <segment title="Volume"/>
                                     <segment title="Moles"/>
                                 </segments>
                             </segmentedControl>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Value" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NiU-PZ-W0E">
-                                <rect key="frame" x="16" y="87" width="159" height="30"/>
+                                <rect key="frame" x="16" y="174" width="201" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Result" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fW1-Cl-Huq">
-                                <rect key="frame" x="16" y="235" width="159" height="30"/>
+                                <rect key="frame" x="16" y="414" width="206" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="w84-Ah-S1Z">
-                                <rect key="frame" x="189" y="159" width="81" height="29"/>
+                                <rect key="frame" x="196" y="286" width="81" height="29"/>
                                 <segments>
                                     <segment title="RTP"/>
                                     <segment title="STP"/>
@@ -360,13 +360,14 @@
                                 </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Moles/Volume" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VZq-Ui-QaY">
-                                <rect key="frame" x="194" y="239" width="109" height="21"/>
+                                <rect key="frame" x="235" y="417" width="109" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x4h-Kc-Jnv">
-                                <rect key="frame" x="16" y="159" width="65" height="30"/>
+                                <rect key="frame" x="99" y="290" width="81" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="Calculate">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -374,14 +375,41 @@
                                     <action selector="calcPressed:" destination="j2C-y9-4LK" eventType="touchUpInside" id="Y92-yt-VfZ"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Details of your scenario will be listed once a calculation has been completed. " textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="eJp-TO-oP1">
+                                <rect key="frame" x="11" y="487" width="328" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Volumes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gge-53-ljc">
+                                <rect key="frame" x="54" y="81" width="242" height="44"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FQR-PG-b2u">
+                                <rect key="frame" x="-26" y="64" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="fgZ-aW-2UJ"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="FQR-PG-b2u"/>
+                            </mask>
+                        </variation>
+                        <connections>
+                            <action selector="resignKeyboard:" destination="j2C-y9-4LK" eventType="touchUpInside" id="I98-HD-vHe"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="calcButton" destination="x4h-Kc-Jnv" id="gI0-7f-W5j"/>
                         <outlet property="conditionSelect" destination="w84-Ah-S1Z" id="WN6-Gy-08N"/>
                         <outlet property="resultLabel" destination="VZq-Ui-QaY" id="Hwm-Au-wfA"/>
                         <outlet property="resultText" destination="fW1-Cl-Huq" id="qeU-UY-e8Y"/>
+                        <outlet property="scenarioText" destination="eJp-TO-oP1" id="csW-Bg-11W"/>
                         <outlet property="unitSelect" destination="nT2-N6-GGG" id="1Gs-O5-4jB"/>
                         <outlet property="valueText" destination="NiU-PZ-W0E" id="4Gv-Sl-EOl"/>
                     </connections>
@@ -393,7 +421,6 @@
         <!--Molar Heat-->
         <scene sceneID="dAz-NG-div">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6PM-QZ-AP2" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="eOH-Dy-ZqT" customClass="molarHeat" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tM7-n6-cfN"/>
@@ -463,6 +490,7 @@
                         <outlet property="tempChangeText" destination="Fls-0f-9Nx" id="2pb-4l-Gk6"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6PM-QZ-AP2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-585" y="1789"/>
         </scene>
