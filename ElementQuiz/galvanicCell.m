@@ -40,6 +40,22 @@
     
 }
 
+
+
+- (IBAction)resignKeyboards:(id)sender {
+    [self.metal1Text resignFirstResponder];
+    [self.metal2Text resignFirstResponder];
+    [self.cathodeText resignFirstResponder];
+    [self.anodeText resignFirstResponder];
+    [self.voltageText resignFirstResponder];
+    
+    
+    
+}
+
+
+
+
 - (IBAction)calculatePress:(id)sender {
     
     

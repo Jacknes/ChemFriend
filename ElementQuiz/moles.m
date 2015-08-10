@@ -27,6 +27,15 @@
 }
 
 
+- (IBAction)resignKeyboards:(id)sender {
+    [self.massText resignFirstResponder];
+    [self.molarText resignFirstResponder];
+    [self.resultText resignFirstResponder];
+
+    
+    
+}
+
 - (IBAction)calcPressed:(id)sender
 {
     float mass = [self.massText.text floatValue];

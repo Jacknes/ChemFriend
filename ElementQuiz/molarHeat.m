@@ -46,6 +46,8 @@ int negative = -1;
     [self.tempChangeText resignFirstResponder];
     [self.specificText resignFirstResponder];
     [self.massText resignFirstResponder];
+    [self.deltaHText resignFirstResponder];
+
 
         
 }
