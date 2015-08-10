@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>potassium</key>
+	<string>-2.94</string>
+	<key>barium</key>
+	<string>-2.91</string>
+	<key>calcium</key>
+	<string>-2.87</string>
+	<key>sodium</key>
+	<string>-2.71</string>
+	<key>magnesium</key>
+	<string>-2.36</string>
+	<key>aluminium</key>
+	<string>-1.68</string>
+	<key>manganese</key>
+	<string>-1.18</string>
+	<key>zinc</key>
+	<string>-0.76</string>
+	<key>iron II</key>
+	<string>-0.44</string>
+	<key>nickel</key>
+	<string>-0.24</string>
+	<key>tin</key>
+	<string>-0.14</string>
+	<key>lead</key>
+	<string>-0.13</string>
+	<key>copper II</key>
+	<string>0.34</string>
+	<key>copper</key>
+	<string>0.52</string>
+	<key>iodine</key>
+	<string>0.54</string>
+	<key>iron III</key>
+	<string>0.77</string>
+	<key>silver</key>
+	<string>0.80</string>
+	<key>bromine</key>
+	<string>1.10</string>
+	<key>chlorine</key>
+	<string>1.36</string>
+	<key>fluorine</key>
+	<string>2.89</string>
+</dict>
+</plist>
