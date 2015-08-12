@@ -40,6 +40,7 @@ float result = 0.0; // Initialises a starting value for result.
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.conditionStr = @"room temperature and pressure (25 Degrees, 298K)"; // Sets the conditionstr initially as the user may not change the state.
+    [self.valueText becomeFirstResponder];
 }
 
 // STP - 22.71L/mol
@@ -79,20 +80,20 @@ float result = 0.0; // Initialises a starting value for result.
             result = (value * condition);
             self.resultStr = [NSString stringWithFormat:@"%f", result];
             self.resultText.text = [NSString stringWithFormat:@"%f", result];
-            self.resultLabel.text = @"Volume";
+            self.resultLabel.text = @"Litres";
             self.scenarioText.text =  [NSString stringWithFormat:@"%s%@%s%@", "The number of litres of your gas at ", self.conditionStr, " is ", self.resultStr];
         
     }
     
     
-    [self.valueText resignFirstResponder];
+   // [self.valueText resignFirstResponder];
 
     
 }
 
-- (IBAction)resignKeyboard:(id)sender {
+/*- (IBAction)resignKeyboard:(id)sender {
     [self.valueText resignFirstResponder];
-}
+} */
 
 - (IBAction)conditionChanged:(id)sender
 {

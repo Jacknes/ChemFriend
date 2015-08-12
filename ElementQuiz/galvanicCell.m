@@ -8,6 +8,7 @@
 //  Copyright (c) 2015 Jack Pascoe. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
 #import "galvanicCell.h"
 
 @interface galvanicCell ()
@@ -32,16 +33,17 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    
-    self.elements = @[@"potassium", @"barium", @"calcium", @"sodium", @"magnesium", @"aluminium", @"manganese", @"zinc", @"iron II", @"nickel", @"tin", @"lead", @"hydrogen", @"copper II", @"copper", @"iodine", @"iron III", @"silver", @"bromine", @"chlorine", @"fluorine"]; // Creates the array of elements used to determine cathode/anode
+     self.elements = @[@"potassium", @"barium", @"calcium", @"sodium", @"magnesium", @"aluminium", @"manganese", @"zinc", @"iron II", @"nickel", @"tin", @"lead", @"hydrogen", @"copper II", @"copper", @"iodine", @"iron III", @"silver", @"bromine", @"chlorine", @"fluorine"]; // Creates the array of elements used to determine cathode/anode
 
     NSString * path = [[NSBundle mainBundle] pathForResource:@"voltages" ofType:@"plist" inDirectory:nil];
     self.voltages = [NSDictionary dictionaryWithContentsOfFile:path];
+    [self.metal1Text becomeFirstResponder];
+   
     
 }
 
 
-
+/*
 - (IBAction)resignKeyboards:(id)sender {
     [self.metal1Text resignFirstResponder];
     [self.metal2Text resignFirstResponder];
@@ -51,7 +53,7 @@
     
     
     
-}
+} */
 
 
 
@@ -64,6 +66,9 @@
     NSNumber *volt1;
     NSNumber *volt2;
     NSNumber *voltage;
+    [self.metal1Text resignFirstResponder];
+    [self.metal2Text resignFirstResponder];
+    
     
     int location1 = 0;
     int location2 = 0;

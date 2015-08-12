@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		58077B341B798D2800AF5832 /* homePage.m in Sources */ = {isa = PBXBuildFile; fileRef = 58077B331B798D2800AF5832 /* homePage.m */; };
 		581DB1B71B5250C4001C8F7F /* molarHeat.m in Sources */ = {isa = PBXBuildFile; fileRef = 581DB1B61B5250C4001C8F7F /* molarHeat.m */; };
 		588122571B537E620022D94A /* volume.m in Sources */ = {isa = PBXBuildFile; fileRef = 588122561B537E620022D94A /* volume.m */; };
 		589604351B71E876008871A1 /* galvanicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 589604341B71E876008871A1 /* galvanicCell.m */; };
@@ -33,6 +34,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		58077B331B798D2800AF5832 /* homePage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = homePage.m; sourceTree = "<group>"; };
+		58077B351B798D3800AF5832 /* homePage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = homePage.h; sourceTree = "<group>"; };
 		581DB1B61B5250C4001C8F7F /* molarHeat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = molarHeat.m; sourceTree = "<group>"; };
 		581DB1B81B525110001C8F7F /* molarHeat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = molarHeat.h; sourceTree = "<group>"; };
 		588122561B537E620022D94A /* volume.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = volume.m; sourceTree = "<group>"; };
@@ -108,6 +111,8 @@
 				589604331B71E85A008871A1 /* galvanicCell.h */,
 				589604341B71E876008871A1 /* galvanicCell.m */,
 				58C5E4A01B42B0FB00D72A3B /* Main.storyboard */,
+				58077B331B798D2800AF5832 /* homePage.m */,
+				58077B351B798D3800AF5832 /* homePage.h */,
 				588122561B537E620022D94A /* volume.m */,
 				588122581B537E6E0022D94A /* volume.h */,
 				58C5E4BC1B42B12F00D72A3B /* elements.plist */,
@@ -250,6 +255,7 @@
 				589604351B71E876008871A1 /* galvanicCell.m in Sources */,
 				58D1175A1B528B80005ED589 /* moles.m in Sources */,
 				58C5E49F1B42B0FB00D72A3B /* ViewController.m in Sources */,
+				58077B341B798D2800AF5832 /* homePage.m in Sources */,
 				58C5E49C1B42B0FB00D72A3B /* AppDelegate.m in Sources */,
 				588122571B537E620022D94A /* volume.m in Sources */,
 				58C5E4991B42B0FB00D72A3B /* main.m in Sources */,
@@ -383,7 +389,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ElementQuiz/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ElementQuiz;
 			};
 			name = Debug;
 		};
@@ -393,7 +399,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ElementQuiz/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ElementQuiz;
 			};
 			name = Release;
 		};
@@ -411,7 +417,7 @@
 				);
 				INFOPLIST_FILE = ElementQuizTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ElementQuizTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ElementQuiz.app/ElementQuiz";
 			};
 			name = Debug;
@@ -426,7 +432,7 @@
 				);
 				INFOPLIST_FILE = ElementQuizTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ElementQuizTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ElementQuiz.app/ElementQuiz";
 			};
 			name = Release;

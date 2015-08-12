@@ -36,13 +36,13 @@ int negative = -1;
     
   //  [self.massText setDelegate:self.massText];
     [super viewDidLoad];
-    
+    [self.massText becomeFirstResponder];
     
     // Do any additional setup after loading the view, typically from a nib.
 }
 
 
-- (IBAction)resignKeyboards:(id)sender {
+/*- (IBAction)resignKeyboards:(id)sender {
     [self.tempChangeText resignFirstResponder];
     [self.specificText resignFirstResponder];
     [self.massText resignFirstResponder];
@@ -51,7 +51,7 @@ int negative = -1;
 
         
 }
-
+*/
 
 
 
@@ -86,19 +86,7 @@ int negative = -1;
     }
     
     
-    
-    
-    
-    
-    [self.tempChangeText resignFirstResponder];
-    
-    
-    
-    
-    
-    
-    
-    
+  
     
 }
 - (IBAction)negativeStateChanged:(id)sender {

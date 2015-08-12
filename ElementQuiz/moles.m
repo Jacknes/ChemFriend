@@ -24,32 +24,46 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    [self.massText becomeFirstResponder];
 }
 
 
-- (IBAction)resignKeyboards:(id)sender {
+/*- (IBAction)resignKeyboards:(id)sender {
     [self.massText resignFirstResponder];
     [self.molarText resignFirstResponder];
     [self.resultText resignFirstResponder];
 
     
     
-}
+}*/
 
 - (IBAction)calcPressed:(id)sender
 {
     float mass = [self.massText.text floatValue];
     float molar = [self.molarText.text floatValue];
-    float result = (mass/molar);
+    float result = [self.resultText.text floatValue];
     
-    self.resultText.text = [NSString stringWithFormat:@"%f", result];
+
     
+    if (result == 0) {
+        float result = (mass / molar);
+        self.resultText.text = [NSString stringWithFormat:@"%f", result];
+    }
     
+    else if (mass == 0) {
+        float mass = (molar * result);
+        self.massText.text = [NSString stringWithFormat:@"%f", mass];
+    }
     
+    else if (molar == 0) {
+        float molar = (mass / result);
+        self.molarText.text = [NSString stringWithFormat:@"%f", molar];
+        
+    }
+   
     
-    
-    
-    
+
+
     
     
 }
