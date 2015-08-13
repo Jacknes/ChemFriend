@@ -98,7 +98,7 @@ float progress = 0.0;
         [self resetButtonStates:(nil)];
         [self.scoreLabel setText:[NSString stringWithFormat:@"Score: %i/%i",score, attempts]]; // Updates the score label accordingly
         [self increaseProgressValue:(nil)]; // Updates the progress bar accordingly
-        [self checkGameStatus:(nil)]; // Checks the status of the game
+        [self checkGameStatus:score]; // Checks the status of the game
     });
   
     
@@ -123,7 +123,7 @@ float progress = 0.0;
 }
 
 
-- (void)checkGameStatus:(id)sender {
+- (void)checkGameStatus:(int)currentScore {
     
     if (attempts < 20){
         [self generateQuestions:(nil)];  // Generates new questions
@@ -131,11 +131,15 @@ float progress = 0.0;
     }
     
     else if (attempts >= 20){ // Ends the game
+
+         NSString *alertMessage = [NSString stringWithFormat:@"%s%d%s", "Congratulations you scored ", currentScore, " out of 20 "];
+        
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Quiz Complete"
-                                                        message:@"Congratulations"
+                                                        message:alertMessage
                                                        delegate:self
                                               cancelButtonTitle:@"Thanks" // Alert at the end of the game
                                               otherButtonTitles:nil];
+        
         [alert show];
         self.option1.hidden = YES; // Hides the answer buttons
         self.option2.hidden = YES;
