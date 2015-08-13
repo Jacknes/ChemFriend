@@ -51,30 +51,43 @@ float result = 0.0; // Initialises a starting value for result.
 - (IBAction)volumeCalcPressed:(id)sender
 {
     float value;
+    value = [self.valueText.text floatValue];
     
-    if ([self.unitSelect selectedSegmentIndex] == 0) {
-        
-        value = [self.valueText.text floatValue];
-        
-        result = (value/condition);
-        self.resultStr = [NSString stringWithFormat:@"%f", result];
-        
-        
-        
-        self.resultText.text = [NSString stringWithFormat:@"%f", result];
-        self.resultLabel.text = @"Moles";
-        
-        self.scenarioText.text =  [NSString stringWithFormat:@"%s%@%s%@", "The number of moles in your volume of gas at ", self.conditionStr, " is ", self.resultStr];
-        
-      /*  [NSString stringWithFormat:@"%s", "You're volume of gas at " + self.conditionStr + "is" + self.resultStr]; */
-        
-       
+    if (value == 0){
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops"
+                                                        message:@"Please ensure you have entered data into the value field and that this data is appropriate (eg. 10.45)"
+                                                       delegate:self
+                                              cancelButtonTitle:@"Okay" // Alerts the user that the data they have entered is not formatted correctly or missing.
+                                              otherButtonTitles:nil];
+        [alert show];
+        self.valueText.text = @"";
         
     }
     
-    else if ([self.unitSelect selectedSegmentIndex] == 1){
+    else {
+        if ([self.unitSelect selectedSegmentIndex] == 0) {
+            
+            
+            
+            result = (value/condition);
+            self.resultStr = [NSString stringWithFormat:@"%f", result];
+            
+            
+            
+            self.resultText.text = [NSString stringWithFormat:@"%f", result];
+            self.resultLabel.text = @"Moles";
+            
+            self.scenarioText.text =  [NSString stringWithFormat:@"%s%@%s%@", "The number of moles in your volume of gas at ", self.conditionStr, " is ", self.resultStr];
+            
+            /*  [NSString stringWithFormat:@"%s", "You're volume of gas at " + self.conditionStr + "is" + self.resultStr]; */
+            
+            
+            
+        }
         
-        float value;
+        else if ([self.unitSelect selectedSegmentIndex] == 1){
+            
+            float value;
             
             value = [self.valueText.text floatValue];
             result = (value * condition);
@@ -82,8 +95,11 @@ float result = 0.0; // Initialises a starting value for result.
             self.resultText.text = [NSString stringWithFormat:@"%f", result];
             self.resultLabel.text = @"Litres";
             self.scenarioText.text =  [NSString stringWithFormat:@"%s%@%s%@", "The number of litres of your gas at ", self.conditionStr, " is ", self.resultStr];
-        
+            
+            
+        }
     }
+ 
     
     
    // [self.valueText resignFirstResponder];

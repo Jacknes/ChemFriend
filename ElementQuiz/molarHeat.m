@@ -85,6 +85,18 @@ int negative = -1;
         self.tempChangeText.text = [NSString stringWithFormat:@"%f", temp];
     }
     
+    if ((mass == 0 && specific == 0) || (mass == 0 && temp == 0) || (mass == 0 && deltaH == 0) || (specific = 0 && temp == 0) || (specific == 0 && deltaH == 0) || (deltaH == 0 && temp ==0)){
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops"
+                                                        message:@"Please ensure you have entered data into at least three fields and that this data is appropriate (eg. 10.45)"
+                                                       delegate:self
+                                              cancelButtonTitle:@"Okay" // Alerts the user that the data they have entered is not formatted correctly or missing.
+                                              otherButtonTitles:nil];
+        [alert show];
+        self.deltaHText.text = @"";
+        
+    }
+    
     
   
     

@@ -126,7 +126,7 @@
     
     else {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops"
-                                                        message:@"Ensure that the metals you've input are one of the included metals and that they are spelt correctly."
+                                                        message:@"Ensure that the metals you've input are one of the included metals and that they are spelt correctly. A list of appropriate metals can be found in the user manual."
                                                        delegate:self
                                               cancelButtonTitle:@"Okay" // Alert at the end of the game
                                               otherButtonTitles:nil];

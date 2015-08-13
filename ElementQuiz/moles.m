@@ -24,18 +24,10 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    [self.massText becomeFirstResponder];
+    [self.massText becomeFirstResponder]; // Opens the keyboard for the mass textfield as soon as the view loads.
 }
 
 
-/*- (IBAction)resignKeyboards:(id)sender {
-    [self.massText resignFirstResponder];
-    [self.molarText resignFirstResponder];
-    [self.resultText resignFirstResponder];
-
-    
-    
-}*/
 
 - (IBAction)moleCalcPressed:(id)sender
 {
@@ -62,7 +54,16 @@
     }
    
     
-
+    if ((result == 0 && mass == 0) || (result == 0 && molar == 0) || (molar == 0 && mass == 0)){
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops"
+                                                        message:@"Please ensure you have entered data into at least two fields and that this data is appropriate (eg. 10.45)"
+                                                       delegate:self
+                                              cancelButtonTitle:@"Okay" // Alerts the user that the data they have entered is not formatted correctly or missing.
+                                              otherButtonTitles:nil];
+        [alert show];
+        self.resultText.text = @"";
+        
+    }
 
     
     

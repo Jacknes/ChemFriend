@@ -267,9 +267,6 @@
                                 <exclude reference="wqk-qf-wBj"/>
                             </mask>
                         </variation>
-                        <connections>
-                            <action selector="resignKeyboards:" destination="btb-WL-wnc" eventType="touchUpInside" id="Rg7-u4-FVO"/>
-                        </connections>
                     </view>
                     <connections>
                         <outlet property="anodeText" destination="BSX-pu-HNN" id="HGc-ZA-y2p"/>
