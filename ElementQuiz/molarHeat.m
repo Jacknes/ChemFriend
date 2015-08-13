@@ -55,7 +55,7 @@ int negative = -1;
 
 
 
-- (IBAction)calcPressed:(id)sender
+- (IBAction)specificCalcPressed:(id)sender
 {
     float mass = [self.massText.text floatValue];
     float specific = [self.specificText.text floatValue];

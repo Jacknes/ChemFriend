@@ -37,7 +37,7 @@
     
 }*/
 
-- (IBAction)calcPressed:(id)sender
+- (IBAction)moleCalcPressed:(id)sender
 {
     float mass = [self.massText.text floatValue];
     float molar = [self.molarText.text floatValue];

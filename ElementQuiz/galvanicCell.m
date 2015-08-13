@@ -58,11 +58,13 @@
 
 
 
-- (IBAction)calculatePress:(id)sender {
+- (IBAction)galvanicCalculatePress:(id)sender {
     
     
-    NSString *metal1 = self.metal1Text.text;
-    NSString *metal2 = self.metal2Text.text;
+    NSString *metal1 = [self.metal1Text.text stringByTrimmingCharactersInSet:
+     [NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    NSString *metal2 = [self.metal2Text.text stringByTrimmingCharactersInSet:
+                        [NSCharacterSet whitespaceAndNewlineCharacterSet]];
     NSNumber *volt1;
     NSNumber *volt2;
     NSNumber *voltage;
@@ -93,10 +95,12 @@
     }
     
     if (location1 > location2){
+        
+        
         self.cathodeText.text = metal1;
         self.anodeText.text = metal2;
-        volt1 = [self.voltages objectForKey:metal1];
         
+        volt1 = [self.voltages objectForKey:metal1];
         volt2 = [self.voltages objectForKey:metal2];
         voltage = @([volt1 floatValue] - [volt2 floatValue]);
         
@@ -113,15 +117,20 @@
     else if (location1 < location2){
         self.cathodeText.text = metal2;
         self.anodeText.text = metal1;
+        
         volt1 = [self.voltages objectForKey:metal1];
-       // Need to make one neg
         volt2 = [self.voltages objectForKey:metal2];
         voltage = @([volt2 floatValue] - [volt1 floatValue]);
         self.voltageText.text = [NSString stringWithFormat:@"%@", voltage];
     }
     
     else {
-        self.voltageText.text = @"The values are equal -_-";
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops"
+                                                        message:@"Ensure that there isn't a space after the metals entered and that the metal is one of the included metals."
+                                                       delegate:self
+                                              cancelButtonTitle:@"Okay" // Alert at the end of the game
+                                              otherButtonTitles:nil];
+        [alert show];
     }
     
 }

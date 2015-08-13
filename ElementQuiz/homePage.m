@@ -22,37 +22,11 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.pictures = @[@"MoleCalc300", @"SpecificHeat300", @"Volume300.png", @"GalvanicCell300", @"Quiz-action300" ]; //
-    [self goThroughPictures:(nil)];
     
 }
 
 
-- (void)goThroughPictures:(id)sender {
-    
-    
-    
-    NSArray *animationImages = [[NSArray alloc] initWithObjects:
-                                [UIImage imageNamed:@"MoleCalc300"],
-                                [UIImage imageNamed:@"SpecificHeat300"],
-                                [UIImage imageNamed:@"Volume300"],
-                                [UIImage imageNamed:@"GalvanicCell300"],
-                                [UIImage imageNamed:@"Quiz-action300"],
-                                nil];
-        
 
-    
-    self.imagePreview.animationImages=animationImages;
-    self.imagePreview.animationDuration = 15;
-    [self.imagePreview startAnimating];
-    
-    
-  
-
-   
-    
-    
-}
 
 
 

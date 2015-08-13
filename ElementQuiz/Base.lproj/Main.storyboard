@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="m78-XX-Tpw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="emG-bB-iQT">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
@@ -250,7 +250,7 @@
                                     <rect key="frame" x="140" y="337" width="87" height="30"/>
                                 </variation>
                                 <connections>
-                                    <action selector="calculatePress:" destination="btb-WL-wnc" eventType="touchUpInside" id="FA4-xG-HjX"/>
+                                    <action selector="galvanicCalculatePress:" destination="btb-WL-wnc" eventType="touchUpInside" id="mBg-yX-slV"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wqk-qf-wBj">
@@ -283,7 +283,7 @@
             </objects>
             <point key="canvasLocation" x="220" y="2498"/>
         </scene>
-        <!--Menu-->
+        <!--ChemFriend-->
         <scene sceneID="S5y-mx-onn">
             <objects>
                 <tableViewController id="tv9-cj-tFo" sceneMemberID="viewController">
@@ -291,6 +291,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <imageView key="tableFooterView" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="laboratory" id="jal-18-nU8">
+                            <rect key="frame" x="0.0" y="284" width="600" height="128"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
                         <sections>
                             <tableViewSection id="Lal-We-A17">
                                 <cells>
@@ -392,11 +396,13 @@
                             <outlet property="delegate" destination="tv9-cj-tFo" id="lbI-wW-NbE"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Menu" id="rE2-Aj-1FG"/>
+                    <navigationItem key="navigationItem" title="ChemFriend" id="rE2-Aj-1FG">
+                        <barButtonItem key="backBarButtonItem" title="Menu" id="uNi-hy-Cot"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mmB-8v-3GE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-585" y="811"/>
+            <point key="canvasLocation" x="-585" y="810.75"/>
         </scene>
         <!--Home Page Class-->
         <scene sceneID="8EH-uc-JLL">
@@ -477,7 +483,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N26-Tf-Rdd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2256" y="810"/>
+            <point key="canvasLocation" x="-2443.5" y="1019.25"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="AHo-8z-3sD">
@@ -571,7 +577,7 @@
                                     <rect key="frame" x="76" y="244" width="81" height="21"/>
                                 </variation>
                                 <connections>
-                                    <action selector="calcPressed:" destination="j2C-y9-4LK" eventType="touchUpInside" id="Y92-yt-VfZ"/>
+                                    <action selector="volumeCalcPressed:" destination="j2C-y9-4LK" eventType="touchUpInside" id="ut9-Ka-2Bp"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Details of your scenario will be listed once a calculation has been completed. " textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="eJp-TO-oP1">
@@ -647,19 +653,6 @@
                                     <rect key="frame" x="61" y="233" width="242" height="30"/>
                                 </variation>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v9Q-rY-gOj">
-                                <rect key="frame" x="135" y="428" width="94" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <state key="normal" title="Calculate">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="135" y="353" width="94" height="30"/>
-                                </variation>
-                                <connections>
-                                    <action selector="calcPressed:" destination="eOH-Dy-ZqT" eventType="touchUpInside" id="fe3-9j-giD"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="∆H" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xV1-LS-SMu">
                                 <rect key="frame" x="61" y="492" width="242" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -681,6 +674,19 @@
                                     <action selector="negativeStateChanged:" destination="eOH-Dy-ZqT" eventType="valueChanged" id="yyX-24-jQF"/>
                                 </connections>
                             </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v9Q-rY-gOj">
+                                <rect key="frame" x="135" y="428" width="94" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="Calculate">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="135" y="353" width="94" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="specificCalcPressed:" destination="eOH-Dy-ZqT" eventType="touchUpInside" id="LCn-ZF-Vew"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -741,7 +747,7 @@
                                     <rect key="frame" x="136" y="305" width="85" height="30"/>
                                 </variation>
                                 <connections>
-                                    <action selector="calcPressed:" destination="3PD-Pa-Msz" eventType="touchUpInside" id="seA-to-TTK"/>
+                                    <action selector="moleCalcPressed:" destination="3PD-Pa-Msz" eventType="touchUpInside" id="7sm-b5-1GU"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Moles" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dAO-QO-SPh">

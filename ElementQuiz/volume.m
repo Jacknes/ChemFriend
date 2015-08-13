@@ -48,7 +48,7 @@ float result = 0.0; // Initialises a starting value for result.
 // RTP - 24.79L/mol
 
 
-- (IBAction)calcPressed:(id)sender
+- (IBAction)volumeCalcPressed:(id)sender
 {
     float value;
     

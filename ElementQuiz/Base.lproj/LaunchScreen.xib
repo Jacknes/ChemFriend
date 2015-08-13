@@ -63,6 +63,7 @@
                 <constraint firstAttribute="centerX" secondItem="kId-c2-rCX" secondAttribute="centerX" id="Koa-jz-hwk"/>
                 <constraint firstAttribute="bottom" secondItem="8ie-xW-0ye" secondAttribute="bottom" constant="20" id="Kzo-t9-V3l"/>
                 <constraint firstItem="8ie-xW-0ye" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="MfP-vx-nX0"/>
+                <constraint firstItem="18D-7t-nu6" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="82" id="Sf3-VO-69R"/>
                 <constraint firstAttribute="centerY" secondItem="18D-7t-nu6" secondAttribute="centerY" id="XWD-6R-Swm"/>
                 <constraint firstAttribute="centerX" secondItem="8ie-xW-0ye" secondAttribute="centerX" id="ZEH-qu-HZ9"/>
                 <constraint firstItem="kId-c2-rCX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="fvb-Df-36g"/>
@@ -76,6 +77,7 @@
                     <exclude reference="2rU-d1-ih1"/>
                     <exclude reference="pkL-YW-9A2"/>
                     <exclude reference="2GD-kk-NYH"/>
+                    <exclude reference="Sf3-VO-69R"/>
                     <exclude reference="XWD-6R-Swm"/>
                 </mask>
             </variation>
@@ -93,10 +95,14 @@
                 </mask>
             </variation>
             <variation key="heightClass=regular-widthClass=compact">
+                <mask key="subviews">
+                    <exclude reference="8ie-xW-0ye"/>
+                </mask>
                 <mask key="constraints">
                     <include reference="2rU-d1-ih1"/>
                     <include reference="pkL-YW-9A2"/>
                     <include reference="2GD-kk-NYH"/>
+                    <exclude reference="Sf3-VO-69R"/>
                     <include reference="XWD-6R-Swm"/>
                 </mask>
             </variation>
