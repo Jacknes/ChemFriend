@@ -234,7 +234,7 @@
                                     <rect key="frame" x="140" y="547" width="174" height="30"/>
                                 </variation>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="If you're using a substance such as iron II, ensure you in put it as such" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="mjC-jW-Xl3">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="If you're using a substance such as iron II, ensure you in put it as such." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="mjC-jW-Xl3">
                                 <rect key="frame" x="63" y="266" width="240" height="52"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>

@@ -126,11 +126,13 @@
     
     else {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops"
-                                                        message:@"Ensure that there isn't a space after the metals entered and that the metal is one of the included metals."
+                                                        message:@"Ensure that the metals you've input are one of the included metals and that they are spelt correctly."
                                                        delegate:self
                                               cancelButtonTitle:@"Okay" // Alert at the end of the game
                                               otherButtonTitles:nil];
         [alert show];
+        [self.metal1Text becomeFirstResponder];
+        
     }
     
 }
