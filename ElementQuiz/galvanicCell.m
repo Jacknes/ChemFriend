@@ -137,7 +137,7 @@
     
     else {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops"
-                                                        message:@"Ensure that the metals you've input are one of the included metals and that they are spelt correctly. A list of appropriate metals can be found in the user manual."
+                                                        message:@"Ensure that the metals you've input are one of the included metals and that they are spelt correctly. A list of appropriate metals can be found in the user manual. Also leave all metals uncapitalised."
                                                        delegate:self
                                               cancelButtonTitle:@"Okay" // Alert to help the user fix the problem
                                               otherButtonTitles:nil];
