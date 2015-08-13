@@ -77,6 +77,8 @@ float result = 0.0; // Initialises a starting value for result.
             
             result = (value/condition); // Performs the appropriate calculation.
             
+            self.resultStr = [NSString stringWithFormat:@"%f", result]; // Assigns the result and places that in the result textfield
+            
             
             self.resultLabel.text = @"Moles"; // Changes the unit description accordingly.
             
@@ -89,7 +91,9 @@ float result = 0.0; // Initialises a starting value for result.
         else if ([self.unitSelect selectedSegmentIndex] == 1){
             
            
-            result = (value * condition); // Performs the appropriate calculation. 
+            result = (value * condition); // Performs the appropriate calculation.
+            
+            self.resultStr = [NSString stringWithFormat:@"%f", result]; // Assigns the result and places that in the result textfield
 
             self.resultLabel.text = @"Litres"; // Changes the unit description accordingly
             self.scenarioText.text =  [NSString stringWithFormat:@"%s%@%s%@", "The number of litres of your gas at ", self.conditionStr, " is ", self.resultStr]; // Adds the result data to the scenario text field
@@ -98,7 +102,7 @@ float result = 0.0; // Initialises a starting value for result.
         }
         
         
-        self.resultStr = [NSString stringWithFormat:@"%f", result]; // Assigns the result and places that in the result textfield
+        
         self.resultText.text = [NSString stringWithFormat:@"%f", result];
         
     }
