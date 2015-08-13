@@ -11,6 +11,7 @@
 
 
 @interface molarHeat ()
+// Outlets established to allow manipulation of onscreen views
 @property (weak, nonatomic) IBOutlet UITextField *massText;
 @property (weak, nonatomic) IBOutlet UITextField *specificText;
 @property (weak, nonatomic) IBOutlet UITextField *tempChangeText;
@@ -26,43 +27,42 @@
 
 
 @implementation molarHeat
-int negative = -1;
+
+
+int negative = -1; // Declaration of the negative state variable.
 
 
 
 - (void)viewDidLoad
 {
     
-    
-  //  [self.massText setDelegate:self.massText];
     [super viewDidLoad];
-    [self.massText becomeFirstResponder];
+    
+    [self.massText becomeFirstResponder]; // Makes the keyboard open when the view is loaded
     
     // Do any additional setup after loading the view, typically from a nib.
 }
 
 
-/*- (IBAction)resignKeyboards:(id)sender {
-    [self.tempChangeText resignFirstResponder];
-    [self.specificText resignFirstResponder];
-    [self.massText resignFirstResponder];
-    [self.deltaHText resignFirstResponder];
 
 
-        
-}
-*/
 
 
 
 - (IBAction)specificCalcPressed:(id)sender
 {
+    
+    // Sets locally scoped variables from the text field outlets
     float mass = [self.massText.text floatValue];
     float specific = [self.specificText.text floatValue];
     float temp = [self.tempChangeText.text floatValue];
-    
     float deltaH = [self.deltaHText.text floatValue];
     
+    
+    
+    // Determines which field is missing for calculation, could have been performed with a case where statement, however in this case would have resulted in the same number of lines of code.
+    
+    // For each, a different arrangement of the same formula is applied according to what is missing.
     
     if (deltaH == 0) {
         float result = -(mass * specific * temp * negative);
@@ -85,7 +85,13 @@ int negative = -1;
         self.tempChangeText.text = [NSString stringWithFormat:@"%f", temp];
     }
     
+    
+    // This statement checks if any two variables are missing at once, causing the calculation to not work.
+    
     if ((mass == 0 && specific == 0) || (mass == 0 && temp == 0) || (mass == 0 && deltaH == 0) || (specific = 0 && temp == 0) || (specific == 0 && deltaH == 0) || (deltaH == 0 && temp ==0)){
+        
+        
+        // If any two are, a notification is sent to the user to review their data entry or format
         
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops"
                                                         message:@"Please ensure you have entered data into at least three fields and that this data is appropriate (eg. 10.45)"
@@ -101,32 +107,26 @@ int negative = -1;
   
     
 }
-- (IBAction)negativeStateChanged:(id)sender {
+- (IBAction)negativeStateChanged:(id)sender { // Method that responds to a change in the segment control indicating a postive or negative temperature change.
     
     if ([self.negativeSwitch selectedSegmentIndex] == 0) {
         
-       negative = -1;
+       negative = -1; // Applies the appropriate value
         
         
     }
 
-    
-    
     
     else if ([self.negativeSwitch selectedSegmentIndex] == 1) {
         
-        negative = 1;
+        negative = 1; // Applies the appropriate value
         
         
     }
 }
 
 
--(BOOL) textFieldShouldReturn:(UITextField *)textField{
-    
-    [self.massText resignFirstResponder];
-    return YES;
-}
+
 
 
 

@@ -11,11 +11,12 @@
 #import "moles.h"
 
 @interface moles ()
+
+// Establishes the outlets allowing for manipulation and interaction of the views in the storyboard
 @property (weak, nonatomic) IBOutlet UITextField *massText;
 @property (weak, nonatomic) IBOutlet UITextField *molarText;
 @property (weak, nonatomic) IBOutlet UIButton *calcButton;
 @property (weak, nonatomic) IBOutlet UITextField *resultText;
-@property (strong, nonatomic) IBOutlet UIView *unitSelector;
 @end
 
 @implementation moles
@@ -29,13 +30,16 @@
 
 
 
-- (IBAction)moleCalcPressed:(id)sender
+- (IBAction)moleCalcPressed:(id)sender // Method run when the calculate button is pressed
 {
+    // Sets localised variables from the textfields within the view
     float mass = [self.massText.text floatValue];
     float molar = [self.molarText.text floatValue];
     float result = [self.resultText.text floatValue];
     
 
+    
+    // If statement structure that determines which variable is missing and applying the correct formula
     
     if (result == 0) {
         float result = (mass / molar);
@@ -54,6 +58,10 @@
     }
    
     
+    
+    
+    // If statement that determines that only one variable is missing, allowing it to function correctly - if not, it informs the user to check there data input and the format of said data.
+    
     if ((result == 0 && mass == 0) || (result == 0 && molar == 0) || (molar == 0 && mass == 0)){
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops"
                                                         message:@"Please ensure you have entered data into at least two fields and that this data is appropriate (eg. 10.45)"
@@ -61,7 +69,7 @@
                                               cancelButtonTitle:@"Okay" // Alerts the user that the data they have entered is not formatted correctly or missing.
                                               otherButtonTitles:nil];
         [alert show];
-        self.resultText.text = @"";
+        self.resultText.text = @""; // Resets the result textfield
         
     }
 
