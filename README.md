@@ -1,4 +1,4 @@
-# ChemFriend
+# ChemFriend (Not yet ready for full release)
 
 <div style="text-align:center"><img src ="http://i.imgur.com/mbO8DPm.jpg" /></div>
 
