@@ -1,5 +1,7 @@
 # ChemFriend
 
+<div style="text-align:center"><img src ="http://i.imgur.com/mbO8DPm.jpg" /></div>
+
 ChemFriend	looks	to	simplify	the process	of	applying	real	chemical	equations to	
 aid	in	the	study	of	chemistry	in	High	School.
 The	application	itself	includes	the	following	pages:
